@@ -1,11 +1,15 @@
 from django.core.paginator import Paginator
 from django.db.models import Q, Count
 from django.shortcuts import render, get_object_or_404
+import logging
 
 from ..models import Question
 
+logger = logging.getLogger('pybo')
+
 
 def index(request):
+    logger.info('index 실행!')
     """
     pybo 목록 출력
     """
